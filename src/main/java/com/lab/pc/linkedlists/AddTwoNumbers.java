@@ -1,37 +1,17 @@
 package com.lab.pc.linkedlists;
 
+class ListNode {
+
+	int val;
+	ListNode next;
+
+	public ListNode(int val) {
+		this.val = val;
+		next = null;
+	}
+}
+
 public class AddTwoNumbers {
-
-	public static ListNode getStart() {
-		return start;
-	}
-
-	private static ListNode start = null;
-	
-	private static class ListNode {
-
-		 int val;
-		 ListNode next;
-
-		public ListNode(int val) {
-			this.val = val;
-			next = null;
-		}
-	}
-
-	public void add(int val){
-		
-		if(start == null)
-			start = new ListNode(val);
-		else{
-			ListNode temp = start;
-			
-			while(temp.next != null)
-				temp = temp.next;
-			
-			temp.next = new ListNode(val);
-		}
-	}
 
 	public ListNode addNumbers(ListNode list1, ListNode list2) {
 
@@ -48,16 +28,15 @@ public class AddTwoNumbers {
 
 			int sum = val1 + val2 + cary;
 
-			if (sum > 10)
-				cary = sum / 10;
+			cary = sum / 10;
 
-			 temp.next = new ListNode(sum % 10);
+			temp.next = new ListNode(sum % 10);
 
 			temp = temp.next;
-			
-			list1= (list1!=null)?list1.next :null;
-			list2= (list2!=null)?list2.next :null;
-			
+
+			list1 = (list1 != null) ? list1.next : null;
+			list2 = (list2 != null) ? list2.next : null;
+
 		}
 
 		if (cary > 0)
@@ -66,9 +45,9 @@ public class AddTwoNumbers {
 		return sumlist.next;
 	}
 
-	
-	public void print() {
-		ListNode temp = start;
+	public void print(ListNode head) {
+
+		ListNode temp = head;
 
 		while (temp != null) {
 			System.out.print(temp.val + " ");
@@ -78,30 +57,25 @@ public class AddTwoNumbers {
 
 	public static void main(String[] args) {
 
-		 AddTwoNumbers list1 = new AddTwoNumbers();
-		 AddTwoNumbers list2 = new AddTwoNumbers();
-		 AddTwoNumbers list3 = new AddTwoNumbers();
-
-		 
-		ListNode head = new ListNode(5); 
-		list1.add(5);
-		list1.add(6);
-		list1.add(7);
-
-		list1.print();
+		AddTwoNumbers sol = new AddTwoNumbers();
+		
+		ListNode head1 = new ListNode(7);
+		head1.next = new ListNode(5);
+		head1.next.next = new ListNode(9);
+		head1.next.next.next = new ListNode(4);
+		head1.next.next.next.next = new ListNode(6);
+		
+		sol.print(head1);
 
 		System.out.println();
 
-		list2.add(1);
-		list2.add(2);
-		list2.add(3);
+		ListNode head2 = new ListNode(8);
+		head2.next = new ListNode(4);
+		//head2.next.next = new ListNode(6);
 
-		list2.print();
-		
-
-		list3.addNumbers(list1.getStart(), list2.getStart());
+		sol.print(head2);
 		System.out.println("\n-----");
-		list3.print();
+		sol.print(sol.addNumbers(head1, head2));
 	}
 
 }
