@@ -9,6 +9,19 @@ class ListNode {
 		this.val = val;
 		next = null;
 	}
+	
+	public void add(ListNode root,int data){
+		
+		ListNode temp = root;
+		
+		while(temp.next != null)
+			temp = temp.next;
+		
+		temp.next = new ListNode(data);
+		
+	}
+	
+	
 }
 
 public class AddTwoNumbers {
