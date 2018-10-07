@@ -1,50 +1,108 @@
 package com.lab.pc.linkedlists;
 
-
 class RandomListNode {
-	      int label;
-	      RandomListNode next, random;
-	      RandomListNode(int x) { 
-	    	  this.label = x; 
-	      }
+	int val;
+	RandomListNode next, random;
+
+	RandomListNode(int x) {
+		this.val = x;
+		this.next = null;
+		this.random = null;
+	}
+
 }
-	 
+
 public class CopyList {
 
-	public void print(RandomListNode head) {
+	public static void print(RandomListNode head) {
 
 		RandomListNode temp = head;
-		System.out.println("\n");
+		// System.out.println("\n");
 		while (temp != null) {
-			System.out.print(temp.label+ " ");
+			System.out.print("|" + temp.val + " " + ((temp.random != null) ? temp.random.val : null) + "|" + "->");
 			temp = temp.next;
 		}
 	}
-	
-	
-	public RandomListNode copy(ListNode head){
-		
-		return null;
-		
+
+	public static RandomListNode copy(RandomListNode head) {
+
+		RandomListNode dup = creteDuplicateList(head);
+
+		copyPointers(dup);
+
+		RandomListNode copy = breakList(dup);
+
+		return copy;
+
 	}
-	
+
+	private static RandomListNode breakList(RandomListNode head) {
+
+		RandomListNode cur = head, tmp = head;
+
+		RandomListNode result = cur.next;
+
+		while (cur.next != null) {
+			tmp = cur.next;
+			cur.next = tmp.next;
+			cur = tmp;
+
+		}
+
+		return result;
+	}
+
+	private static void copyPointers(RandomListNode head) {
+
+		RandomListNode cur = head;
+
+		while (cur != null) {
+			cur.next.random = cur.random.next;
+			cur = cur.next.next;
+		}
+
+	}
+
+	private static RandomListNode creteDuplicateList(RandomListNode head) {
+
+		RandomListNode cur = head;
+
+		while (cur != null) {
+
+			RandomListNode tmp = new RandomListNode(cur.val);
+			tmp.next = cur.next;
+			cur.next = tmp;
+			cur = tmp.next;
+
+		}
+		return head;
+	}
+
 	public static void main(String[] args) {
-		
-		CopyList list = new CopyList();
-		RandomListNode head = new RandomListNode(1);
+
+		RandomListNode one = new RandomListNode(1);
 		RandomListNode two = new RandomListNode(2);
 		RandomListNode three = new RandomListNode(3);
 		RandomListNode four = new RandomListNode(4);
-		
-		head.next = two;
+
+		one.next = two;
 		two.next = three;
 		three.next = four;
-		four.next = null;
-		
-		
-		list.print(head);
-		
-		
+
+		one.random = four;
+		four.random = three;
+		two.random = one;
+		three.random = two;
+
+		System.out.print("Original :  ");
+		print(one);
+
+		System.out.println("\n");
+
+		RandomListNode dup = copy(one);
+		System.out.print("Dup :  ");
+		print(dup);
+
 	}
 
 }
