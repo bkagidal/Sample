@@ -1,34 +1,61 @@
 package com.lab.pc.tree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+import java.util.Map;
+import java.util.Queue;
 
 public class VerticalOrderTraversal {
 
-	public static List<Integer> inOrder(TreeNode root) {
+	public static List<List<Integer>> verticalOrder(TreeNode root) {
 
-		List<Integer> in = new ArrayList<>();
-		Stack<TreeNode> stack = new Stack<>();
+		List<List<Integer>> res = new ArrayList<>();
 
-		// stack.push(root);
+		Map<Integer, List<Integer>> data = new HashMap<>();
+		Queue<TreeNode> q1 = new LinkedList<>();
+		Queue<Integer> q2 = new LinkedList<>();
+		int minDis = 0;
+		int maxDis = 0;
 
-		TreeNode p = root;
-		while (!stack.isEmpty() || p != null) {
+		q1.offer(root);
+		q2.offer(0); // root node level is 0
 
-			if (p != null) {
-				stack.push(p);
-				p = p.left;            // Move to left as far as possible
-			} else {
-				TreeNode t = stack.pop();
-				in.add(t.val);
+		while (!q1.isEmpty()) {
 
-				p = t.right;
+			TreeNode node = q1.poll();
+			int level = q2.poll();
+
+			minDis = Math.min(minDis, level);
+			maxDis = Math.max(maxDis, level);
+
+			if (data.containsKey(level))
+				data.get(level).add(node.val);
+			else {
+				List<Integer> list = new ArrayList<>();
+				list.add(node.val);
+				data.put(level, list);
 			}
 
-		}
+			if (node.left != null) {
+				q1.offer(node.left);
+				q2.offer(level - 1);
+			}
 
-		return in;
+			if (node.right != null) {
+				q1.offer(node.right);
+				q2.offer(level + 1);
+			}
+
+			
+
+		}
+		
+		for (int i = minDis; i <= maxDis; i++)
+			res.add(data.get(i));
+
+		return res;
 	}
 
 	public static void main(String[] args) {
@@ -43,7 +70,7 @@ public class VerticalOrderTraversal {
 		root.right.left = new TreeNode(6);
 		root.right.right = new TreeNode(7);
 
-		List<Integer> res = inOrder(root);
+		List<List<Integer>> res = verticalOrder(root);
 
 		System.out.println(res);
 	}
