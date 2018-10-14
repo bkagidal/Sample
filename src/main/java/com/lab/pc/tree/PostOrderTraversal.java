@@ -19,7 +19,7 @@ public class PostOrderTraversal {
 			TreeNode node = stack.pop();
 			
 			stack2.push(node);
-;			
+			
 			if(node.left != null)
 				stack.push(node.left);
 			
