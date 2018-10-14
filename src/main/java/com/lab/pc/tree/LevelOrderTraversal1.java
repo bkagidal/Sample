@@ -1,6 +1,7 @@
 package com.lab.pc.tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -78,6 +79,10 @@ public class LevelOrderTraversal1 {
 		// List<Integer> res = levelOrder(root);
 
 		List<List<Integer>> res = levelOrder2(root);
+		System.out.println(res);
+		System.out.println("\n");
+		
+		Collections.reverse(res);
 
 		System.out.println(res);
 	}
