@@ -19,6 +19,44 @@ public class PathSum {
 
 		System.out.println(pathSum(root, 8));
 		System.out.println(pathSum1(root, 8));
+		
+		printPaths(root);
+	}
+
+	private static void printPaths(TreeNode root) {
+		
+		int[] path = new int[1000];
+		helper(root,path,0);
+		
+	}
+
+	private static void helper(TreeNode node, int[] path, int pathLen) {
+		
+		if(node == null)
+			return;
+		
+		path[pathLen] = node.val;
+		pathLen++;
+		
+		//System.out.println("Node :"+node.val+" pathLen :"+pathLen);
+		
+		if(node.left == null && node.right == null )
+			printPath(path,pathLen);
+		else{
+			helper(node.left,path,pathLen);
+			helper(node.right,path,pathLen);
+		}
+			
+		
+	}
+
+	private static void printPath(int[] path, int pathLen) {
+		
+		System.out.println("\n");
+		for(int i=0;i<pathLen;i++)
+			System.out.print(path[i]+" ");
+		System.out.println("\n");
+		
 	}
 
 	private static boolean pathSum1(TreeNode root, int sumVal) {
