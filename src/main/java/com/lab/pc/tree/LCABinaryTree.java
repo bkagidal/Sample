@@ -14,24 +14,30 @@ public class LCABinaryTree {
 		root.left.right.left = new TreeNode(10);
 		root.left.right.right = new TreeNode(14);
 
-		int lca = getLCA(root, 10, 4);
+		TreeNode node = getLCA(root, 10, 4);
 
-		System.out.println("LCA :" + lca);
+		System.out.println("LCA :" + node.val);
+
 	}
 
-	private static int getLCA(TreeNode root, int i, int j) {
+	private static TreeNode getLCA(TreeNode node, int n1, int n2) {
 
-		while (root != null) {
+		if (node == null)
+			return null;
 
-			if (root.val > i && root.val > j)
-				root = root.left;
-			else if (root.val < i && root.val < j)
-				root = root.right;
-			else
-				break;
-		}
+		if (node.val == n1 || node.val == n2)
+			return node;
 
-		return root.val;
+		TreeNode left = getLCA(node.left, n1, n2);
+		TreeNode right = getLCA(node.right, n1, n2);
+
+		if (left != null && right != null)
+			return node;
+
+		if (left == null && right == null)
+			return null;
+
+		return left != null ? left : right;
 
 	}
 
