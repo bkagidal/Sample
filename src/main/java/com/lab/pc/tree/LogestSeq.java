@@ -22,7 +22,7 @@ public class LogestSeq {
 	}
 	
 	/*
-	 *  longest consecutive path would be in sequnce like 1-2-3. so we know next value
+	 *  longest consecutive path would be in sequence like 1-2-3. so we know next value
 	 *  should be one grater. compare with expected value if its 1 more than current increase
 	 *  pathlen by 1 else reset to 1.
 	 */
