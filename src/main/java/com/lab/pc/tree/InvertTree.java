@@ -22,6 +22,8 @@ public class InvertTree {
 		TreeNode invert = invert2(root);
 
 		print(invert);
+		
+		invert.display(root, 0);
 
 	}
 
