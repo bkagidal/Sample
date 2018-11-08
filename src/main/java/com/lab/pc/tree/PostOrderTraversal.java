@@ -9,22 +9,22 @@ public class PostOrderTraversal {
 	public static List<Integer> postOrder(TreeNode root) {
 
 		List<Integer> post = new ArrayList<>();
-		Stack<TreeNode> stack = new Stack<>();
+		Stack<TreeNode> stack1 = new Stack<>();
 		Stack<TreeNode> stack2 = new Stack<>();
 
-		 stack.push(root);
+		 stack1.push(root);
 
-		while (!stack.isEmpty() ) {
+		while (!stack1.isEmpty() ) {
 
-			TreeNode node = stack.pop();
+			TreeNode node = stack1.pop();
 			
 			stack2.push(node);
 			
 			if(node.left != null)
-				stack.push(node.left);
+				stack1.push(node.left);
 			
 			if(node.right != null)
-				stack.push(node.right);
+				stack1.push(node.right);
 
 		}
 		
