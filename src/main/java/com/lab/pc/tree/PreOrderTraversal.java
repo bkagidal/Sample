@@ -58,6 +58,21 @@ public class PreOrderTraversal {
 		return pre;
 	}
 	
+	
+	public static void preOrderRecursive(TreeNode node){
+		
+		if(node == null)
+			return;
+		
+		System.out.print(node.val+" ");
+		
+		if(node.left != null)
+			preOrderRecursive(node.left);
+		
+		if(node.right != null)
+			preOrderRecursive(node.right);
+		
+	}
 
 	public static void main(String[] args) {
 
@@ -74,6 +89,10 @@ public class PreOrderTraversal {
 		List<Integer> res = preOrder(root);
 		
 		System.out.println(res);
+		
+		System.out.println("\n");
+		
+		preOrderRecursive(root);
 	}
 	
 	
