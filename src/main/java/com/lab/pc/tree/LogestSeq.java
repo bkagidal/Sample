@@ -20,6 +20,12 @@ public class LogestSeq {
 
 		System.out.println(res);
 	}
+	
+	/*
+	 *  longest consecutive path would be in sequnce like 1-2-3. so we know next value
+	 *  should be one grater. compare with expected value if its 1 more than current increase
+	 *  pathlen by 1 else reset to 1.
+	 */
 
 	private static void logestSequenceLen(TreeNode node, int expected, int pathLen) {
 
