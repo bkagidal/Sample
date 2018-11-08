@@ -16,7 +16,13 @@ public class FlattenBTree {
 		root.right.left = new TreeNode(6);
 		root.right.right = new TreeNode(7);
 		
+		root.display(root, 0);
+		
+		System.out.println("\n");
+		
 		flatten(root);
+		
+		root.display(root, 0);
 	}
 
 	private static void flatten(TreeNode root) {
