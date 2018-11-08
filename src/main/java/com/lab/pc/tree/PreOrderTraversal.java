@@ -15,6 +15,23 @@ class TreeNode {
 		left = null;
 		right = null;
 	}
+	
+	public static void display(TreeNode p, int level) {
+
+		if (p == null)
+			return;
+
+		display(p.right, level + 1);
+		System.out.println(" ");
+
+		for (int i = 0; i < level; i++)
+			System.out.print("  ");
+
+		System.out.print(p.val);
+		// System.out.print(" ");
+		display(p.left, level + 1);
+	}
+
 }
 
 public class PreOrderTraversal {
