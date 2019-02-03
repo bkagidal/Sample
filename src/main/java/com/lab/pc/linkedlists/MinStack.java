@@ -1,5 +1,17 @@
 package com.lab.pc.linkedlists;
 
+class Element {
+	int val;
+	int min;
+	Element next;
+
+	public Element(int val, int min) {
+		this.val = val;
+		this.min = min;
+		next = null;
+	}
+}
+
 public class MinStack {
 
 	Element top;
@@ -67,14 +79,3 @@ public class MinStack {
 
 }
 
-class Element {
-	int val;
-	int min;
-	Element next;
-
-	public Element(int val, int min) {
-		this.val = val;
-		this.min = min;
-		next = null;
-	}
-}
