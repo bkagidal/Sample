@@ -29,6 +29,7 @@ public class LinkedList {
 
 		if (previousNode == null) {
 			head = newNode;
+			return;
 		}
 
 		newNode.next = previousNode.next;
@@ -40,8 +41,14 @@ public class LinkedList {
 
 		Node nNode = new Node(data);
 
-		Node temp = head;
 
+		if(head == null){
+			head = nNode;
+			return;
+		}
+		
+		Node temp = head;
+		
 		while (temp.next != null)
 			temp = temp.next;
 
@@ -66,7 +73,7 @@ public class LinkedList {
 		list.push(2);
 		list.push(3);
 
-		list.insertAfter(list.head.next, 33);
+		list.insertAfter(list.head, 33);
 
 		list.append(99);
 		list.append(100);
