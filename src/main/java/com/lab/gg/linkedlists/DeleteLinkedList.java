@@ -56,11 +56,42 @@ public class DeleteLinkedList {
 			if (temp == null) {
 				System.out.println("Element not found");
 				return;
-			} 
-			
+			}
+
 			prev.next = temp.next;
 
 		}
+	}
+
+	public void deleteAtPos(int pos) {
+
+		int cnt = 0;
+
+		Node temp = head;
+		Node prev = null;
+
+		if (head == null) {
+			System.out.println("Empty List");
+			return;
+		}
+
+		if (pos == 0) {
+			head = head.next;
+			return;
+		}
+
+		while (cnt != pos && temp != null) {
+
+			prev = temp;
+			temp = temp.next;
+
+			cnt++;
+		}
+		
+		
+		
+		prev.next = temp.next;
+
 	}
 
 	public static void main(String[] args) {
@@ -74,10 +105,11 @@ public class DeleteLinkedList {
 		list.push(5);
 		list.push(6);
 
-		list.delete(1);
+		/*list.delete(1);
 		list.delete(2);
 		list.delete(6);
-
+*/
+		list.deleteAtPos(6);
 		list.printList();
 	}
 
