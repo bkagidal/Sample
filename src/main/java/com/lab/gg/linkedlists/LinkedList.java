@@ -41,14 +41,13 @@ public class LinkedList {
 
 		Node nNode = new Node(data);
 
-
-		if(head == null){
+		if (head == null) {
 			head = nNode;
 			return;
 		}
-		
+
 		Node temp = head;
-		
+
 		while (temp.next != null)
 			temp = temp.next;
 
@@ -65,6 +64,43 @@ public class LinkedList {
 		}
 	}
 
+	public int length() {
+
+		int len = 0;
+
+		Node temp = head;
+
+		while (temp != null) {
+			len++;
+			temp = temp.next;
+		}
+
+		return len;
+	}
+
+	int recLen = 0;
+	
+	public void lenghtRecursive(Node head) {
+
+		if (head == null)
+			return;
+		recLen++;
+		lenghtRecursive(head.next);
+	}
+
+	public int getCountRec(Node node) {
+
+		if (node == null)
+			return 0;
+
+		return 1 + getCountRec(node.next);
+	}
+
+	public int getCountRec() {
+
+		return getCountRec(head);
+	}
+
 	public static void main(String[] args) {
 
 		LinkedList list = new LinkedList();
@@ -79,6 +115,14 @@ public class LinkedList {
 		list.append(100);
 
 		list.printList();
+
+		System.out.println("\nList Length :" + list.length());
+
+		list.lenghtRecursive(list.head);
+
+		System.out.println("\nList Length Recusrsive:" + list.recLen);
+		
+		System.out.println("\nList Length Recusrsive:" + list.getCountRec());
 	}
 
 }
