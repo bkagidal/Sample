@@ -24,6 +24,9 @@ public class DeleteLinkedList {
 	}
 
 	public void printList() {
+		
+		if(head == null)
+			System.out.println("\nEmpty List");
 
 		Node temp = head;
 
@@ -96,6 +99,10 @@ public class DeleteLinkedList {
 		prev.next = temp.next;
 
 	}
+	
+	public void deleteList(){
+		head = null;
+	}
 
 	public static void main(String[] args) {
 
@@ -109,13 +116,21 @@ public class DeleteLinkedList {
 		list.push(6);
 
 		/*list.delete(1);
-		list.delete(2);
-		list.delete(6);
-*/
-		list.deleteAtPos(5);
+		  list.delete(2);
+		  list.delete(6);
+		 */
+		
+/*		list.deleteAtPos(5);
 		list.deleteAtPos(4);
 		list.deleteAtPos(1);
+*/		
+		
 		list.printList();
+		
+		list.deleteList();
+		
+		list.printList();
+
 	}
 
 }
