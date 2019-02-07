@@ -88,7 +88,10 @@ public class DeleteLinkedList {
 			cnt++;
 		}
 		
-		
+		if(temp == null){
+			System.out.println("Out of range");
+			return;
+		}
 		
 		prev.next = temp.next;
 
@@ -109,7 +112,9 @@ public class DeleteLinkedList {
 		list.delete(2);
 		list.delete(6);
 */
-		list.deleteAtPos(6);
+		list.deleteAtPos(5);
+		list.deleteAtPos(4);
+		list.deleteAtPos(1);
 		list.printList();
 	}
 
