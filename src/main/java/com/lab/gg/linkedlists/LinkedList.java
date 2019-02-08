@@ -79,7 +79,7 @@ public class LinkedList {
 	}
 
 	int recLen = 0;
-	
+
 	public void lenghtRecursive(Node head) {
 
 		if (head == null)
@@ -99,6 +99,38 @@ public class LinkedList {
 	public int getCountRec() {
 
 		return getCountRec(head);
+	}
+
+	public boolean searchIterative(int key) {
+
+		Node temp = head;
+
+		while (temp != null) {
+
+			if (temp.data == key)
+				return true;
+
+			temp = temp.next;
+		}
+
+		return false;
+	}
+
+	public boolean searchRecursive(Node node, int key) {
+
+		if (node == null)
+			return false;
+
+		if (node.data == key)
+			return true;
+
+		return searchRecursive(node.next, key);
+
+	}
+
+	public boolean search(int key) {
+
+		return searchRecursive(head, key);
 	}
 
 	public static void main(String[] args) {
@@ -121,8 +153,14 @@ public class LinkedList {
 		list.lenghtRecursive(list.head);
 
 		System.out.println("\nList Length Recusrsive:" + list.recLen);
-		
+
 		System.out.println("\nList Length Recusrsive:" + list.getCountRec());
+
+		System.out.println(list.searchIterative(3));
+
+		System.out.println(list.searchIterative(53));
+
+		System.out.println(list.search(43));
 	}
 
 }
