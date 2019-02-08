@@ -133,6 +133,43 @@ public class LinkedList {
 		return searchRecursive(head, key);
 	}
 
+	public int getNth(int n) {
+
+		int cnt = 1;
+
+		Node temp = head;
+
+		while (temp != null) {
+			if (cnt == n)
+				return temp.data;
+			cnt++;
+			temp = temp.next;
+		}
+
+		assert (false);
+
+		return 0;
+	}
+
+	int cnt = 1;
+
+	private int getNthRec(Node node, int n) {
+
+		if (node == null)
+			return 0;
+		
+		if (cnt == n)
+			return node.data;
+
+		return getNthRec(node.next, n - 1);
+
+	}
+
+	public int getNthRec(int n) {
+
+		return getNthRec(head, n);
+	}
+
 	public static void main(String[] args) {
 
 		LinkedList list = new LinkedList();
@@ -161,6 +198,10 @@ public class LinkedList {
 		System.out.println(list.searchIterative(53));
 
 		System.out.println(list.search(43));
+
+		System.out.println(list.getNth(7));
+
+		System.out.println(list.getNthRec(6));
 	}
 
 }
