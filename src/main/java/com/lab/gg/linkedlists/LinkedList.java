@@ -198,6 +198,33 @@ public class LinkedList {
 		return temp.data;
 
 	}
+	
+	
+	public int getNthFromLast2(int n){
+		
+		Node refPointer = head;
+		Node mainPointer = head;
+		
+		if(head == null){
+			System.out.println("Empty List");
+			return -1;
+		}
+		
+		for(int i=0;i<n && refPointer != null;i++)
+			refPointer = refPointer.next;
+		
+		if(refPointer == null){
+			System.out.println("Out Of RANGE");
+			return -1;
+		}
+		
+		while(refPointer != null){
+			mainPointer = mainPointer.next;
+			refPointer = refPointer.next;
+		}
+		
+		return mainPointer.data;
+	}
 
 	public static void main(String[] args) {
 
@@ -233,6 +260,8 @@ public class LinkedList {
 		System.out.println(list.getNthRec(6));
 		
 		System.out.println(list.getNthFromLast(7));
+		
+		System.out.println(list.getNthFromLast2(6));
 	}
 
 }
