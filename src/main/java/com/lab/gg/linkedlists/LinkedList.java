@@ -157,7 +157,7 @@ public class LinkedList {
 
 		if (node == null)
 			return 0;
-		
+
 		if (cnt == n)
 			return node.data;
 
@@ -168,6 +168,35 @@ public class LinkedList {
 	public int getNthRec(int n) {
 
 		return getNthRec(head, n);
+	}
+
+	public int getNthFromLast(int n) {
+
+		Node temp = head;
+
+		int len = 0;
+
+		while (temp != null) {
+			len++;
+			temp = temp.next;
+		}
+
+		int cnt = (len - n + 1);
+		
+		if(n>len){
+			System.out.println("Out Of Range Search");
+			return -1;
+		}
+			
+
+		temp = head;
+
+		for (int i = 1; i < cnt; i++)
+			temp = temp.next;
+		
+		
+		return temp.data;
+
 	}
 
 	public static void main(String[] args) {
@@ -202,6 +231,8 @@ public class LinkedList {
 		System.out.println(list.getNth(7));
 
 		System.out.println(list.getNthRec(6));
+		
+		System.out.println(list.getNthFromLast(7));
 	}
 
 }
