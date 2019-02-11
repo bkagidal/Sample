@@ -261,7 +261,7 @@ public class LinkedList {
 		
 		System.out.println(list.getNthFromLast(7));
 		
-		System.out.println(list.getNthFromLast2(6));
+		System.out.println(list.getNthFromLast2(4));
 	}
 
 }
