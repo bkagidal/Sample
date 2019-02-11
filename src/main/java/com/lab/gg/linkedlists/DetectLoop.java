@@ -59,7 +59,8 @@ public class DetectLoop {
 		return false;
 	}
 	
-	public boolean detectLoop2(){
+	
+	public int detectLoop2(){
 		
 		Node slow = head,fast = head;
 		
@@ -68,11 +69,24 @@ public class DetectLoop {
 			slow= slow.next;
 			fast = fast.next.next;
 			
-			if(slow == fast)
-				return true;
+			if(slow == fast){
+				return countLoopLen(slow);
+			}
 		}
 		
-		return false;
+		return 0;
+	}
+
+	private int countLoopLen(Node slow) {
+		int len =1;
+		
+		Node temp = slow;
+		
+		while(temp.next != slow){
+			len++;
+			temp = temp.next;
+		}
+		return len;
 	}
 
 	public static void main(String[] args) {
@@ -84,7 +98,7 @@ public class DetectLoop {
 		list.append(3);
 		list.append(4);
 		
-		list.head.next.next.next.next = list.head;
+		list.head.next.next.next = list.head;
 		
 		System.out.println("\n");
 		
