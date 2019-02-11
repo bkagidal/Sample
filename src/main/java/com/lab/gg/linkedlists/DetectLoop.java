@@ -58,6 +58,22 @@ public class DetectLoop {
 		
 		return false;
 	}
+	
+	public boolean detectLoop2(){
+		
+		Node slow = head,fast = head;
+		
+		while(slow != null && fast.next != null && fast.next.next != null ){
+			
+			slow= slow.next;
+			fast = fast.next.next;
+			
+			if(slow == fast)
+				return true;
+		}
+		
+		return false;
+	}
 
 	public static void main(String[] args) {
 
@@ -68,7 +84,7 @@ public class DetectLoop {
 		list.append(3);
 		list.append(4);
 		
-		//list.head.next.next.next.next = list.head;
+		list.head.next.next.next.next = list.head;
 		
 		System.out.println("\n");
 		
@@ -76,6 +92,7 @@ public class DetectLoop {
 		
 		System.out.println("\nLoop : "+list.detectLoop(list.head));
 		
+		System.out.println("\nLoop Detect : "+list.detectLoop2());
 		
 	}
 
