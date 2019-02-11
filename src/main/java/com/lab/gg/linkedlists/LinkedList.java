@@ -1,5 +1,7 @@
 package com.lab.gg.linkedlists;
 
+import com.lab.gg.linkedlists.DeleteLinkedList.Node;
+
 public class LinkedList {
 
 	Node head;
@@ -225,6 +227,48 @@ public class LinkedList {
 		
 		return mainPointer.data;
 	}
+	
+	
+	private int middleOfList(Node head){
+		
+		Node first = head,second=head;
+		
+		while(second != null && second.next != null){
+			
+			first = first.next;
+			second = second.next.next;
+		}
+		return first.data;
+	}
+	
+	public int getMiddle(){
+		return middleOfList(head);
+	}
+	
+	int occurcnt =0;
+	
+	public void noofOccur(int n,Node head){
+		
+		if(head == null)
+			return;
+		
+		if(head.data == n)
+			occurcnt++;
+		noofOccur(n, head.next);
+	}
+	
+	
+	public int count(int n,Node head){
+		
+		if(head == null)
+			return 0;
+		
+		if(head.data == n)
+			return 1+ count(n,head.next);
+		
+		return count(n,head.next);
+	}
+	
 
 	public static void main(String[] args) {
 
@@ -233,11 +277,16 @@ public class LinkedList {
 		list.push(1);
 		list.push(2);
 		list.push(3);
+		list.push(4);
+		list.push(5);
+		list.push(1);
 
 		list.insertAfter(list.head, 33);
 
 		list.append(99);
 		list.append(100);
+		list.append(101);
+		list.append(102);
 
 		list.printList();
 
@@ -262,6 +311,15 @@ public class LinkedList {
 		System.out.println(list.getNthFromLast(7));
 		
 		System.out.println(list.getNthFromLast2(4));
+	
+		System.out.println("Middle :"+list.getMiddle());
+		
+		list.noofOccur(1, list.head);
+		
+		System.out.println("No Of Occurances  :"+list.occurcnt);
+		
+		System.out.println("No Of Occurances  Rec :"+list.count(1, list.head));
 	}
+	
 
 }
