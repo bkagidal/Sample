@@ -1,5 +1,7 @@
 package com.lab.gg.linkedlists;
 
+import java.util.HashSet;
+
 public class RemoveDuplicates {
 
 	Node head;
@@ -61,6 +63,7 @@ public class RemoveDuplicates {
 		}
 	}
 
+	// unsorted list
 	public void removeDuplicates2() {
 
 		Node curr = head, prev = head, next = head.next;
@@ -69,7 +72,7 @@ public class RemoveDuplicates {
 
 			prev = curr;
 			next = curr.next;
-			while (next!= null) {
+			while (next != null) {
 
 				if (curr.data == next.data) {
 					prev.next = next.next;
@@ -77,6 +80,28 @@ public class RemoveDuplicates {
 
 				prev = prev.next;
 				next = next.next;
+
+			}
+
+			curr = curr.next;
+		}
+
+	}
+
+	// Hashing
+	public void removeDuplicates3() {
+
+		HashSet<Integer> set = new HashSet<>();
+
+		Node curr = head, prev = head;
+
+		while (curr.next != null) {
+
+			if (set.contains(curr.data)) {
+				prev.next = curr.next;
+			} else {
+				set.add(curr.data);
+				prev = curr;
 
 			}
 
@@ -99,7 +124,7 @@ public class RemoveDuplicates {
 
 		list.printList(list.head);
 
-		//list.removeDuplicates();
+		// list.removeDuplicates();
 
 		list.removeDuplicates2();
 		System.out.println("\n");
