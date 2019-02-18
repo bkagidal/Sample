@@ -52,7 +52,6 @@ public class Palindrom {
 		fast_ptr = head;
 
 		Node prev_of_slow_ptr = head;
-		Node midnode = null; // To handle odd size list
 
 		while (fast_ptr != null && fast_ptr.next != null) {
 
@@ -62,7 +61,6 @@ public class Palindrom {
 		}
 
 		if (fast_ptr != null) {
-			midnode = slow_ptr;
 			slow_ptr = slow_ptr.next;
 		}
 
