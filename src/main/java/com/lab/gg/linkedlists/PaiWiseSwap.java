@@ -61,6 +61,22 @@ public class PaiWiseSwap {
 		n2.data = temp;
 
 	}
+	
+	public void moveLasttoFirst(){
+		
+		Node temp = head,prev=null;
+		
+		while(temp.next != null){
+			prev = temp;
+			temp = temp.next;
+		}
+		
+		temp.next = head;
+		head = temp;
+		prev.next = null;
+		
+		
+	}
 
 	public static void main(String[] args) {
 
@@ -77,7 +93,8 @@ public class PaiWiseSwap {
 
 		list.printList();
 		
-		list.pairwiseSwap();
+		list.moveLasttoFirst();
+		//list.pairwiseSwap();
 		
 		System.out.println("\n");
 		list.printList();
