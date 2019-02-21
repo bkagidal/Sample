@@ -1,7 +1,5 @@
 package com.lab.gg.linkedlists;
 
-import com.lab.gg.linkedlists.DeleteLinkedList.Node;
-
 public class LinkedList {
 
 	Node head;
