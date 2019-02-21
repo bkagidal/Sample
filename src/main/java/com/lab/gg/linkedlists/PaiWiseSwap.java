@@ -1,7 +1,5 @@
 package com.lab.gg.linkedlists;
 
-import com.lab.gg.linkedlists.SwapNodes.Node;
-
 public class PaiWiseSwap {
 
 	Node head;
