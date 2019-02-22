@@ -2,7 +2,7 @@ package com.lab.gg.linkedlists;
 
 import java.util.HashSet;
 
-//Test
+//Test 2
 public class ListsInterSecPoint {
 
 	Node head;
