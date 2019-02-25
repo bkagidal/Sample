@@ -50,15 +50,28 @@ public class ReverseList {
 		Node curr = head;
 		Node next = head.next;
 		while (curr != null) {
-			
+
 			next = curr.next;
 			curr.next = prev;
-			prev=curr;
+			prev = curr;
 			curr = next;
-			
+
 		}
 
 		head = prev;
+	}
+
+	public void printReverse() {
+		printRev(head);
+	}
+
+	private void printRev(Node node) {
+
+		if (node == null)
+			return;
+		printRev(node.next);
+
+		System.out.print(node.data+" ");
 	}
 
 	public static void main(String[] args) {
@@ -73,12 +86,17 @@ public class ReverseList {
 		list.append(70);
 
 		list.printList();
+
+		//list.reverseList();
+
+		System.out.println("\n");
+
 		
-		list.reverseList();
+		list.printReverse();
 		
 		System.out.println("\n");
-		
-		list.printList();
+
+		//list.printList();
 
 	}
 
