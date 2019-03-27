@@ -1,6 +1,7 @@
 package com.lab.gg.linkedlists;
 
-public class QuickSortList {
+
+public class SegregateList {
 
 	Node head;
 
@@ -40,26 +41,37 @@ public class QuickSortList {
 		}
 	}
 	
-	
-	public int partition(){
+	public Node seggregate(Node head){
 		
-		
-		return -1;
-	}
-	public Node getTail(){
+		Node even = new Node(-1);
+		Node temp1 = even;
+		Node odd = new Node(-1);
+		Node temp2 = odd;
 		
 		Node temp = head;
 		
-		while(temp.next != null)
+		while(temp != null){
+			
+			if(temp.data %2 ==0){
+				temp1.next = new Node(temp.data);
+				temp1 = temp1.next;
+			}else{
+				temp2.next = new Node(temp.data);
+				temp2 = temp2.next;
+			}
+			
 			temp = temp.next;
+		}
 		
-		return temp;
+		temp1.next = odd.next;
+		
+		return even.next;
 	}
 
 	public static void main(String[] args) {
 		
-		QuickSortList list = new QuickSortList();
-		
+		SegregateList list = new SegregateList();
+
 		list.insert(40);
 		list.insert(5);
 		list.insert(23);
@@ -70,12 +82,18 @@ public class QuickSortList {
 		list.insert(13);
 		list.insert(7);
 		list.insert(90);
-		
+
 		list.printList();
 		
-		System.out.println("\n"+((Node)list.getTail()).data);
+		Node head = list.seggregate(list.head);
 		
-
+		Node temp = head;
+		
+		System.out.println("\n");
+		while(temp != null){
+			System.out.print(temp.data +" ");
+			temp = temp.next;
+		}
 	}
 
 }
