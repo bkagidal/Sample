@@ -64,7 +64,7 @@ public class RemoveDuplicates {
 		}
 	}
 
-	// unsorted list
+	// unsorted list TODO : Need to Understand this
 	public void removeDuplicates2() {
 
 		Node curr = head, prev = head, next = head.next;
