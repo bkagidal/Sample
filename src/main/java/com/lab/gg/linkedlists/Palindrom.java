@@ -1,5 +1,16 @@
 package com.lab.gg.linkedlists;
 
+
+/**
+ * 
+ * @author bkagidal
+ *
+ *  1. Split the list. 
+ *  	a. hable odd length case
+ *  2. reverse the second half.
+ *  3. compare first and second.
+ *  
+ */
 public class Palindrom {
 
 	Node head;

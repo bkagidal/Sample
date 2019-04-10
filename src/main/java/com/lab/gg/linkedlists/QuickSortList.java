@@ -1,5 +1,6 @@
 package com.lab.gg.linkedlists;
 
+//TODO: unfinished because of the complexity
 public class QuickSortList {
 
 	Node head;

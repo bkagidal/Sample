@@ -87,7 +87,7 @@ public class PaiWiseSwap {
 		list.append(50);
 		list.append(60);
 		list.append(70);
-		list.append(80);
+		//list.append(80);
 
 		list.printList();
 		

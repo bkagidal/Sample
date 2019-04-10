@@ -48,6 +48,7 @@ public class RemoveDuplicates {
 
 	}
 
+	//Sorted List
 	public void removeDuplicates() {
 
 		Node curr = head, next = head.next;

@@ -256,6 +256,7 @@ public class LinkedList {
 	}
 	
 	
+	//TODO : didnt understood 04082019
 	public int count(int n,Node head){
 		
 		if(head == null)

@@ -1,5 +1,9 @@
 package com.lab.gg.linkedlists;
 
+/**
+ * 
+ *	Swap Node links
+ */
 public class SwapNodes {
 
 	Node head;
