@@ -91,8 +91,8 @@ public class PaiWiseSwap {
 
 		list.printList();
 		
-		list.moveLasttoFirst();
-		//list.pairwiseSwap();
+		//list.moveLasttoFirst();
+		list.pairwiseSwap();
 		
 		System.out.println("\n");
 		list.printList();
