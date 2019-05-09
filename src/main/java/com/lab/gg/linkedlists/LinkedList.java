@@ -200,6 +200,11 @@ public class LinkedList {
 	}
 	
 	
+	/*
+	 *  1. Move the ref Pointer to n positions.
+	 *  2. Now Start moving main pointer until ref pointer is null.
+	 *  3. mail pointer will stop exactly n positions from last
+	 */
 	public int getNthFromLast2(int n){
 		
 		Node refPointer = head;
@@ -257,6 +262,11 @@ public class LinkedList {
 	
 	
 	//TODO : didnt understood 04082019
+	
+	/* 05092019
+	 * 1. Recursively calling fun with adding one with next node
+	 *	  it continuos untill last node otherwise just call with next node.
+	 */
 	public int count(int n,Node head){
 		
 		if(head == null)
