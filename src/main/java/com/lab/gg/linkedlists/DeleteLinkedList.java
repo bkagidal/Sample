@@ -22,6 +22,25 @@ public class DeleteLinkedList {
 		node.next = head;
 		head = node;
 	}
+	
+	public void append(int data){
+		
+		Node n = new Node(data);
+		
+		if(head == null){
+			head = n;
+			return;
+		}
+		
+		Node temp = head;
+		
+		while(temp.next != null){
+			temp = temp.next;
+		}
+		
+		temp.next = n;
+		
+	}
 
 	public void printList() {
 		
@@ -108,27 +127,34 @@ public class DeleteLinkedList {
 
 		DeleteLinkedList list = new DeleteLinkedList();
 
-		list.push(1);
+		/*list.push(1);
 		list.push(2);
 		list.push(3);
 		list.push(4);
 		list.push(5);
-		list.push(6);
+		list.push(6);*/
+		
+		list.append(1);
+		list.append(2);
+		list.append(3);
+		list.append(4);
+		list.append(5);
+		list.append(6);
 
-		/*list.delete(1);
-		  list.delete(2);
-		  list.delete(6);
-		 */
+		//list.delete(1);
+		list.delete(8);
+		//  list.delete(6);
+		 
 		
 /*		list.deleteAtPos(5);
 		list.deleteAtPos(4);
 		list.deleteAtPos(1);
 */		
 		
-		list.printList();
+	/*	list.printList();
 		
 		list.deleteList();
-		
+		*/
 		list.printList();
 
 	}
