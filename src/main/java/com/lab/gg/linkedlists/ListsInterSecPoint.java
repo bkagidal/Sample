@@ -2,6 +2,12 @@ package com.lab.gg.linkedlists;
 
 import java.util.HashSet;
 
+/*
+ *  05092019
+ *  1. Add one list elements to set.
+ *  2. Iterate through second list check if it exists in set.
+ *  3. if exists thats the intersection point.
+ */
 public class ListsInterSecPoint {
 
 	Node head;
