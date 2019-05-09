@@ -1,5 +1,11 @@
 package com.lab.gg.linkedlists;
 
+/*
+ *   1. Compare 2 nodes if less move temp to next.
+ *   2. point current  one to previous pointer.
+ *   3. point prev to cur.
+ *   4. assign compared pointer to temp.
+ */
 public class MergeLists {
 
 	Node head;
