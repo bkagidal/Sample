@@ -2,6 +2,10 @@ package com.lab.gg.linkedlists;
 
 import java.util.HashSet;
 
+/*
+ *  1. Using Set
+ *  2. Using two pointers slow & fast if they meet then there is loop.
+ */
 public class DetectLoop {
 
 	Node head;
