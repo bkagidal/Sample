@@ -1,7 +1,7 @@
 package com.lab.gg.linkedlists;
 
 /*
- *  NOTE: lists have to be sorted
+ *  NOTE: lists have to be sorted 05092019
  *  1. Start interating through 2 list node.
  *  2. if equal add this to new list
  *  3. first one less move this pointer to next
