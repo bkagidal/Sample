@@ -93,5 +93,5 @@ public class ListsInterSecPoint {
 		System.out.println("\n\n"+list1.inserSecpoint(list1.head, list2.head));
 		
 	}
-
+	
 }
