@@ -105,7 +105,7 @@ public class SwapNodes {
 
 		list.printList();
 		
-		list.swap(30, 60);
+		list.swap(30, 40);
 		
 		System.out.println("\n");
 		

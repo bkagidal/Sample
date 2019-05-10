@@ -1,7 +1,5 @@
 package com.lab.gg.linkedlists;
 
-import com.lab.gg.linkedlists.PaiWiseSwap.Node;
-
 public class AlternateOddEven {
 
 	Node head;
@@ -44,7 +42,7 @@ public class AlternateOddEven {
 		}
 	}
 
-	public Node oddeven(Node head) {
+	public void oddeven(Node head) {
 
 		Node temp = head;
 
@@ -53,11 +51,12 @@ public class AlternateOddEven {
 		int swap1 = -1;
 		int swap2 = -1;
 
-		Node node = null;
 
 		while (temp != null) {
 
 			int data = temp.data;
+			
+			//System.out.println("data "+data +" odd "+oddPos);
 
 			if (oddPos && (data % 2 == 0)) {
 				swap1 = data;
@@ -66,10 +65,16 @@ public class AlternateOddEven {
 			}
 
 			if (swap1 != -1 && swap2 != -1) {
+				
+				//System.out.println("\nSwapping :"+ swap1 + " "+swap2);
 
 				swap(swap1, swap2);
+				
+				//printList();
+				
 				swap1 = -1;
 				swap2 = -1;
+				temp = temp.next;
 			}
 
 			oddPos = !oddPos;
@@ -77,7 +82,6 @@ public class AlternateOddEven {
 			temp = temp.next;
 		}
 
-		return node;
 
 	}
 
@@ -137,6 +141,42 @@ public class AlternateOddEven {
 		
 		System.out.println("\n");
 		list.printList();
+		
+		/*AlternateOddEven list2 = new AlternateOddEven();
+		
+		list2.append(10);
+		list2.append(1);
+		list2.append(2);
+		list2.append(3);
+		list2.append(5);
+		list2.append(6);
+		list2.append(7);
+		list2.append(8);
+
+		list2.printList();
+		
+		list2.oddeven(list2.head);
+		
+		System.out.println("\n");
+		list2.printList();*/
+		/*
+		AlternateOddEven list2 = new AlternateOddEven();
+		
+		list2.append(1);
+		list2.append(3);
+		list2.append(5);
+		list2.append(7);
+		list2.append(9);
+		list2.append(11);
+		list2.append(13);
+		list2.append(15);
+
+		list2.printList();
+		
+		list2.oddeven(list2.head);
+		
+		System.out.println("\n");
+		list2.printList();*/
 	}
 
 }
