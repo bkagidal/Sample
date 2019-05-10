@@ -1,7 +1,5 @@
 package com.lab.gg.linkedlists;
 
-import com.lab.gg.linkedlists.SwapNodes.Node;
-
 public class ReverseList {
 
 	Node head;
@@ -71,7 +69,7 @@ public class ReverseList {
 			return;
 		printRev(node.next);
 
-		System.out.print(node.data+" ");
+		System.out.print(node.data + " ");
 	}
 
 	public static void main(String[] args) {
@@ -87,16 +85,15 @@ public class ReverseList {
 
 		list.printList();
 
-		//list.reverseList();
+		// list.reverseList();
 
 		System.out.println("\n");
 
-		
 		list.printReverse();
-		
+
 		System.out.println("\n");
 
-		//list.printList();
+		// list.printList();
 
 	}
 

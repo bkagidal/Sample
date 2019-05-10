@@ -6,7 +6,7 @@ package com.lab.gg.linkedlists;
  * @author bkagidal
  *
  *  1. Split the list. (use fast and slow pointers)
- *  	a. handle odd length case (user prev for slow after iteration if fast is not nullits odd move slow to next)
+ *  	a. handle odd length case (use prev for slow, after iteration if fast is not null ,its odd so move slow to next)
  *  2. reverse the second half.
  *  3. compare first and second.
  *  
