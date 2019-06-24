@@ -1,5 +1,14 @@
 package com.lab.gg.linkedlists;
 
+// 06242019
+//Odd and Even Nodes Should be alternate in Single Linked list.
+//1. Start with odd position verify its data get if it needs to be swapped(means data is even).
+//2. collect next element which is not in correct position.
+//3. swap these two elements.
+//     1. find p1 and c1, p2 and c2
+//     2.  p1 nex to c2 , p2 next to c1
+//     3. Now connect the broken links reg swap.
+
 public class AlternateOddEven {
 
 	Node head;
