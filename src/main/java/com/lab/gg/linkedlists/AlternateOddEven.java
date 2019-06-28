@@ -6,7 +6,7 @@ package com.lab.gg.linkedlists;
 //2. collect next element which is not in correct position.
 //3. swap these two elements.
 //     1. find p1 and c1, p2 and c2
-//     2.  p1 nex to c2 , p2 next to c1
+//     2. p1 nex to c2 , p2 next to c1
 //     3. Now connect the broken links reg swap.
 
 public class AlternateOddEven {
