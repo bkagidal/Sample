@@ -137,12 +137,16 @@ public class AlternateOddEven {
 		
 		AlternateOddEven list = new AlternateOddEven();
 		
-		list.append(11);
+		//This One not working 06282019
+		
+		list.append(10);
 		list.append(20);
-		list.append(40);
-		list.append(55);
-		list.append(77);
-		list.append(80);
+		list.append(22);
+		list.append(23);
+		list.append(25);
+		list.append(26);
+		list.append(27);
+		list.append(28);
 
 		list.printList();
 		
