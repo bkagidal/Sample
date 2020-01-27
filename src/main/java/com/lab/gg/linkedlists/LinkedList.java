@@ -1,5 +1,9 @@
 package com.lab.gg.linkedlists;
 
+/*
+ * 10232019
+ *  Length : for recursive way do 1+recursive call with next node.
+ */
 public class LinkedList {
 
 	Node head;

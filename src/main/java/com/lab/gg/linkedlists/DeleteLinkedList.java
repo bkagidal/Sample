@@ -5,6 +5,8 @@ package com.lab.gg.linkedlists;
  * 1. Check if deleting node is first --> then just move head to next one and return.
  * 2. move pointer until we meet the node to be deleted make sure you have prev and temp poniters.
  * 3. just assign prev.net to temp.next where temp is node to be deleted.
+ * 10232019
+ * 4. to delete at a position just move the prev and temp pointers unless we meet the position to be deleted.
  */
 public class DeleteLinkedList {
 
