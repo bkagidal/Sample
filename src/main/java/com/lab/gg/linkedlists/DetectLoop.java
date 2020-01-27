@@ -71,7 +71,7 @@ public class DetectLoop {
 		
 		Node slow = head,fast = head;
 		
-		while(slow != null && fast.next != null && fast.next.next != null ){
+		while(slow != null && fast != null && fast.next != null ){
 			
 			slow= slow.next;
 			fast = fast.next.next;
@@ -105,7 +105,9 @@ public class DetectLoop {
 		list.append(3);
 		list.append(4);
 		
-		list.head.next.next.next = list.head;
+		System.out.println(list.head.next.next.data);
+		
+		list.head.next.next = list.head;
 		
 		System.out.println("\n");
 		
