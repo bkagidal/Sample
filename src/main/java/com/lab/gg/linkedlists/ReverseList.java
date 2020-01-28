@@ -1,5 +1,13 @@
 package com.lab.gg.linkedlists;
 
+/*
+ * 01282020
+ * 1. Move the next pointer first.
+ * 2. adjust the link so that cur link should point to previous one.
+ * 3. Make the prev as current.
+ * 4. Lastly move the current pointer to next. 
+ * 5. You can user also recursion to just print list.
+ */
 public class ReverseList {
 
 	Node head;
