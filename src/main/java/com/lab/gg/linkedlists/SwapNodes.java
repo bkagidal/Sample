@@ -49,7 +49,7 @@ public class SwapNodes {
 	/*
 	 *   1. Find the 1st Element and its Prev
 	 *   2. Find the Second Element and its Prev
-	 *   3. p1's next to cur2 and p2's next tp cur1 if p1 and p2 not null else p1 null head to c2 vv
+	 *   3. p1's next to cur2 and p2's next to cur1 if p1 and p2 not null else p1 null head to c2 vv
 	 *   4. now swap links of cur1 and cu2 next elements
 	 */
 	public void swap(int s1, int s2) {

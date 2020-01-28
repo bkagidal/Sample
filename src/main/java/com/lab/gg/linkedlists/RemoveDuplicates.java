@@ -3,6 +3,7 @@ package com.lab.gg.linkedlists;
 import java.util.HashSet;
 /*
  *  TODO:Practice again
+ *  01282020 understood whole prog
  */
 public class RemoveDuplicates {
 
@@ -66,7 +67,12 @@ public class RemoveDuplicates {
 		}
 	}
 
-	// unsorted list TODO : Need to Understand this
+	 
+	/*  unsorted list TODO : Need to Understand this
+	 	 01282020
+	 *  1. For each element. compare with rest of the list.
+	 *  2. if match just remove the link.it removes all the duplicates.
+	 */
 	public void removeDuplicates2() {
 
 		Node curr = head, prev = head, next = head.next;
