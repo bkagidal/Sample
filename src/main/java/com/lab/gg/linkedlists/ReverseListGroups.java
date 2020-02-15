@@ -96,7 +96,7 @@ public class ReverseListGroups {
 
 		list.printList();
 
-		Node n = list.reverListInGroups(list.getHead(), 2);
+		Node n = list.reverListInGroups(list.getHead(), 3);
 
 		System.out.println("\n");
 
