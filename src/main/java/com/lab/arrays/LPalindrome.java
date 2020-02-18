@@ -11,7 +11,8 @@ public class LPalindrome {
 	
 	public static String longestPalindrome(String s) {
 	    
-        TreeMap<Integer,String> map = new TreeMap<>();
+        TreeMap<Integer,String> map = null;
+            map = new TreeMap<>();
         
         int len = s.length();
         
